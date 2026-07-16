@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Кабинет тренера — Express Cross Coach</title>
+<link rel="stylesheet" href="../css/common.css?v=10">
+<link rel="stylesheet" href="../css/animations.css">
+<link rel="stylesheet" href="../css/dashboard.css?v=10">
+<link rel="stylesheet" href="../css/weekly.css?v=2">
+</head>
+<body>
+
+<header class="app-header">
+  <div class="flex" style="align-items:center; gap:14px;">
+    <button class="mobile-menu-btn" id="mobileMenuBtn"></button>
+    <a href="landing.html" class="logo"><svg class="logo-mark" viewBox="0 0 40 40" width="30" height="30"><defs><linearGradient id="lg1" x1="0" y1="0" x2="40" y2="40"><stop offset="0%" stop-color="#6366f1"/><stop offset="100%" stop-color="#f59e0b"/></linearGradient></defs><path d="M20 3 L34 11 L34 27 L20 37 L6 27 L6 11 Z" fill="url(#lg1)" fill-opacity="0.1" stroke="url(#lg1)" stroke-width="2.5" stroke-linejoin="round"/><g fill="url(#lg1)"><rect x="8" y="15" width="3.5" height="10" rx="1.5"/><rect x="12" y="16.5" width="2.5" height="7" rx="1"/><rect x="25.5" y="16.5" width="2.5" height="7" rx="1"/><rect x="28.5" y="15" width="3.5" height="10" rx="1.5"/></g><rect x="14" y="19" width="12" height="2.5" rx="1" fill="url(#lg1)"/></svg><span>Cross<span>Coach</span></span></a>
+    <span class="badge">Тренер</span>
+  </div>
+  <div class="header-actions">
+    <button class="theme-toggle" id="themeToggle" title="Тема"></button>
+    <div class="notif-bell" id="notifBell" title="Уведомления"><span id="bellIcon"></span><span class="notif-count hidden" id="notifCount">0</span></div>
+    <span class="text-muted" id="userName" style="font-size:14px;"></span>
+    <a href="#" class="btn btn-ghost btn-sm" id="logoutBtn">Выйти</a>
+  </div>
+</header>
+
+<div class="app-layout">
+  <aside class="sidebar" id="sidebar">
+    <a href="#" data-view="overview" class="active"><span class="icon" id="ic-overview"></span> Обзор</a>
+    <a href="#" data-view="clients"><span class="icon" id="ic-clients"></span> Клиенты</a>
+    <a href="#" data-view="calendar"><span class="icon" id="ic-calendar"></span> Календарь</a>
+    <a href="#" data-view="templates"><span class="icon" id="ic-templates"></span> Шаблоны</a>
+    <a href="#" data-view="analytics"><span class="icon" id="ic-analytics"></span> Аналитика</a>
+    <a href="#" data-view="earnings"><span class="icon" id="ic-earnings"></span> Заработок</a>
+    <a href="#" data-view="leaderboard"><span class="icon" id="ic-leaderboard"></span> Рейтинг</a>
+    <a href="#" data-view="profile"><span class="icon" id="ic-profile"></span> Мой профиль</a>
+    <div id="clientNav" class="hidden"></div>
+    <a href="#" data-action="add-client" style="color:var(--primary);"><span class="icon" id="ic-add"></span> Добавить клиента</a>
+  </aside>
+  <main class="main-content" id="mainContent"></main>
+</div>
+
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal" id="modalBox">
+    <div class="modal-header"><h3 id="modalTitle"></h3><button class="modal-close" data-close></button></div>
+    <div class="modal-body" id="modalBody"></div>
+    <div class="modal-footer" id="modalFooter"></div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="notifOverlay">
+  <div class="modal" style="max-width:420px;">
+    <div class="modal-header"><h3>Уведомления</h3><button class="modal-close" data-notif-close></button></div>
+    <div class="modal-body"><div class="notif-list" id="notifList"></div></div>
+    <div class="modal-footer"><button class="btn btn-ghost btn-sm" id="markAllRead">Прочитать все</button></div>
+  </div>
+</div>
+
+<div class="toast-container" id="toastContainer"></div>
+<div class="loading-overlay" id="loader"><div class="spinner"></div></div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="../javascript/icons.js?v=6"></script>
+<script src="../javascript/theme.js?v=5"></script>
+<script src="../javascript/api.js?v=10"></script>
+<script src="../javascript/notifications.js?v=6"></script>
+<script src="../javascript/charts.js?v=5"></script>
+<script src="../javascript/weekly.js?v=3"></script>
+<script src="../javascript/dashboard.js?v=21"></script>
+</body>
+</html>

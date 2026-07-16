@@ -1,0 +1,177 @@
+/* ============================================================
+   WEEKLY TRACKER — стили еженедельного трекинга.
+   ============================================================ */
+
+/* Заголовок */
+.wk-header { margin-bottom: 20px; }
+.wk-add-btn { margin-top: 12px; }
+
+/* Карточка недели */
+.wk-card {
+  margin-bottom: 16px;
+  border-left: 4px solid var(--border);
+  transition: border-color .3s;
+}
+.wk-card.wk-status-progress { border-left-color: var(--success, #22c55e); }
+.wk-card.wk-status-regression { border-left-color: var(--danger, #ef4444); }
+.wk-card.wk-status-repeated_regression { border-left-color: var(--danger, #ef4444); animation: wkPulse 2s infinite; }
+.wk-card.wk-status-stable { border-left-color: var(--text-muted, #999); }
+.wk-card.wk-status-first { border-left-color: var(--primary, #6366f1); }
+.wk-card.wk-status-none { border-left-color: var(--border); }
+
+@keyframes wkPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(239,68,68,0); }
+  50% { box-shadow: 0 0 12px 2px rgba(239,68,68,0.25); }
+}
+
+.wk-card-head {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 14px;
+}
+.wk-week-info { display: flex; flex-direction: column; gap: 2px; }
+.wk-week-num { font-size: 18px; font-weight: 700; color: var(--text); }
+.wk-week-date { font-size: 13px; color: var(--text-muted); }
+
+/* Бейджи прогресса */
+.wk-badge {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 5px 12px; border-radius: 20px;
+  font-size: 13px; font-weight: 600; white-space: nowrap;
+}
+.wk-badge.wk-progress { background: rgba(34,197,94,0.15); color: #16a34a; }
+.wk-badge.wk-regression { background: rgba(239,68,68,0.15); color: #dc2626; }
+.wk-badge.wk-repeated { background: rgba(239,68,68,0.25); color: #dc2626; animation: wkBadgePulse 1.5s infinite; }
+.wk-badge.wk-stable { background: rgba(156,163,175,0.15); color: var(--text-muted); }
+.wk-badge.wk-first { background: rgba(99,102,241,0.15); color: var(--primary); }
+
+@keyframes wkBadgePulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+/* Вес */
+.wk-weight-row { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; flex-wrap: wrap; }
+.wk-weight { font-size: 15px; color: var(--text); }
+.wk-weight strong { font-size: 17px; }
+.wk-weight-delta { font-size: 14px; font-weight: 700; padding: 3px 10px; border-radius: 16px; }
+.wk-weight-delta.wk-down { background: rgba(34,197,94,0.15); color: #16a34a; }
+.wk-weight-delta.wk-up { background: rgba(239,68,68,0.15); color: #dc2626; }
+
+/* Таблица метрик */
+.wk-metrics { margin: 14px 0; }
+.wk-metric-header,
+.wk-metric-row {
+  display: grid;
+  grid-template-columns: 1fr 80px 20px 80px;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+}
+.wk-metric-header {
+  font-size: 12px; color: var(--text-muted);
+  text-transform: uppercase; letter-spacing: .5px;
+  border-bottom: 2px solid var(--border);
+}
+.wk-metric-label { display: flex; align-items: center; gap: 6px; color: var(--text); }
+.wk-metric-target { text-align: right; color: var(--text-muted); font-weight: 600; }
+.wk-metric-arrow { text-align: center; color: var(--text-muted); font-size: 12px; }
+.wk-metric-arrow::before { content: '→'; }
+.wk-metric-actual { text-align: right; font-weight: 600; }
+.wk-metric-actual.wk-good { color: #16a34a; }
+.wk-metric-actual.wk-bad { color: #dc2626; }
+.wk-pending { color: var(--text-muted); font-style: italic; font-weight: 400; font-size: 12px; }
+
+/* Активность */
+.wk-activity { margin-top: 12px; font-size: 14px; }
+.wk-act-label { color: var(--text-muted); font-weight: 600; }
+
+/* Ссылка на меню */
+.wk-menu-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  margin-top: 12px; color: var(--primary); text-decoration: none;
+  font-size: 14px; font-weight: 600;
+}
+.wk-menu-link:hover { text-decoration: underline; }
+
+/* Заметки тренера */
+.wk-notes {
+  margin-top: 12px; padding: 10px 14px;
+  background: var(--bg-hover, rgba(0,0,0,0.03));
+  border-radius: var(--radius-sm, 8px);
+  font-size: 14px; color: var(--text-muted);
+}
+.wk-notes-trainer { border-left: 3px solid var(--primary); }
+
+/* Кнопки в карточке */
+.wk-card-actions { margin-top: 12px; display: flex; gap: 8px; }
+
+/* Форма в модалке */
+.wk-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+/* Клиент: текущая неделя */
+.wk-current { border-width: 2px; }
+.wk-input-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+  margin: 14px 0;
+}
+
+/* Цели от тренера (клиент видит только для чтения) */
+.wk-targets-summary {
+  margin-top: 16px; padding: 14px;
+  background: var(--bg-hover, rgba(0,0,0,0.03));
+  border-radius: var(--radius-sm, 8px);
+}
+.wk-targets-grid {
+  display: flex; flex-wrap: wrap; gap: 8px;
+}
+.wk-target-chip {
+  display: flex; flex-direction: column;
+  padding: 8px 14px;
+  background: var(--bg-card, #fff);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm, 8px);
+  min-width: 80px;
+}
+.wk-tc-label { font-size: 11px; color: var(--text-muted); text-transform: uppercase; }
+.wk-tc-val { font-size: 15px; font-weight: 700; color: var(--primary); }
+
+/* Мотивационные сообщения */
+.wk-motiv {
+  display: flex; align-items: center; gap: 10px;
+  padding: 14px 18px; border-radius: var(--radius-sm, 8px);
+  margin-bottom: 16px; font-size: 15px; font-weight: 600;
+}
+.wk-motiv-good { background: rgba(34,197,94,0.12); color: #15803d; }
+.wk-motiv-bad { background: rgba(239,68,68,0.1); color: #b91c1c; }
+.wk-motiv-alert { background: rgba(239,68,68,0.18); color: #b91c1c; animation: wkBadgePulse 2s infinite; }
+.wk-motiv-info { background: rgba(99,102,241,0.1); color: var(--primary); }
+
+/* Адаптив */
+/* Кнопки в модалке: красный X (отклонить) + зелёная галочка (принять) */
+.modal-close.wk-reject { color: var(--danger, #ef4444); }
+.modal-close.wk-reject::after { content: '\00d7'; font-size: 24px; }
+.modal-close.wk-reject:hover { background: rgba(239,68,68,0.18); color: var(--danger); transform: scale(1.1); }
+
+.modal-close.wk-accept { color: var(--success, #22c55e); }
+.modal-close.wk-accept::after { content: '\2713'; font-size: 22px; font-weight: 700; }
+.modal-close.wk-accept:hover { background: rgba(34,197,94,0.18); color: var(--success); transform: scale(1.1); }
+
+@media (max-width: 768px) {
+  .wk-form-grid { grid-template-columns: 1fr; }
+  .wk-input-grid { grid-template-columns: 1fr 1fr; }
+  .wk-metric-header,
+  .wk-metric-row { grid-template-columns: 1fr 60px 16px 60px; font-size: 13px; }
+}
+
+@media (max-width: 480px) {
+  .wk-input-grid { grid-template-columns: 1fr; }
+  .wk-card-head { flex-direction: column; align-items: flex-start; gap: 8px; }
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Вход — Express Cross Coach</title>
+<link rel="stylesheet" href="../css/common.css?v=5">
+<link rel="stylesheet" href="../css/animations.css">
+<link rel="stylesheet" href="../css/auth.css?v=2">
+</head>
+<body>
+<div class="auth-page">
+  <div class="auth-blob b1"></div>
+  <div class="auth-blob b2"></div>
+  <div class="auth-card">
+    <div class="auth-logo"><svg class="logo-mark" viewBox="0 0 40 40" width="36" height="36"><defs><linearGradient id="lg1" x1="0" y1="0" x2="40" y2="40"><stop offset="0%" stop-color="#6366f1"/><stop offset="100%" stop-color="#f59e0b"/></linearGradient></defs><path d="M20 3 L34 11 L34 27 L20 37 L6 27 L6 11 Z" fill="url(#lg1)" fill-opacity="0.1" stroke="url(#lg1)" stroke-width="2.5" stroke-linejoin="round"/><g fill="url(#lg1)"><rect x="8" y="15" width="3.5" height="10" rx="1.5"/><rect x="12" y="16.5" width="2.5" height="7" rx="1"/><rect x="25.5" y="16.5" width="2.5" height="7" rx="1"/><rect x="28.5" y="15" width="3.5" height="10" rx="1.5"/></g><rect x="14" y="19" width="12" height="2.5" rx="1" fill="url(#lg1)"/></svg><span>Cross<span>Coach</span></span></div>
+    <p class="auth-sub">Войдите в личный кабинет</p>
+    <div style="display:flex;justify-content:flex-end;margin-bottom:14px;">
+      <button class="theme-toggle" id="themeToggle" title="Тема"></button>
+    </div>
+    <div class="role-switch">
+      <button type="button" class="active" data-role="trainer" id="roleTrainer"></button>
+      <button type="button" data-role="client" id="roleClient"></button>
+    </div>
+    <div class="error-msg" id="errorMsg"></div>
+    <form id="loginForm">
+      <div class="field"><label>Логин</label><input type="text" class="input" id="username" placeholder="Введите логин" required></div>
+      <div class="field"><label>Пароль</label><input type="password" class="input" id="password" placeholder="Введите пароль" required></div>
+      <button type="submit" class="btn btn-primary btn-block" id="loginBtn"></button>
+    </form>
+    <div class="demo-hint">
+      <strong>Демо-доступ:</strong><br>
+      Тренер: <code>admin</code> / <code>admin123</code><br>
+      Клиент: <code>Иванов Иван</code> / <code>client123</code>
+    </div>
+    <div class="auth-footer">
+      <a href="landing.html" class="btn-back"><span class="back-arrow"></span> На главную</a>
+    </div>
+  </div>
+</div>
+<div class="toast-container" id="toastContainer"></div>
+<script src="../javascript/icons.js?v=5"></script>
+<script src="../javascript/theme.js?v=5"></script>
+<script src="../javascript/api.js?v=6"></script>
+<script src="../javascript/auth.js?v=5"></script>
+</body>
+</html>

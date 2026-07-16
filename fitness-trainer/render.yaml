@@ -1,0 +1,16 @@
+# Render.com конфигурация для Express Cross Coach
+# Как использовать:
+# 1. Залейте проект на GitHub
+# 2. На render.com: New → Web Service → подключите репозиторий
+# 3. Render автоматически прочитает этот файл
+
+services:
+  - type: web
+    name: express-cross-coach
+    runtime: python
+    rootDir: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0

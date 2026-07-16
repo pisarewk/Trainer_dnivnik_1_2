@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"></head><body>
+<div id="test"></div>
+<script src="../javascript/icons.js"></script>
+<script>
+var t = document.getElementById('test');
+try {
+  t.innerHTML = '<h2>Icons test</h2>';
+  t.innerHTML += 'Icons type: ' + typeof Icons + '<br>';
+  t.innerHTML += 'Icons.home: ' + (typeof Icons.home) + '<br>';
+  t.innerHTML += 'Test icon: ' + Icons.home({size:32}) + '<br>';
+  t.innerHTML += 'Test dumbbell: ' + Icons.dumbbell({size:32}) + '<br>';
+  t.innerHTML += 'Test clipboard-list: ' + Icons['clipboard-list']({size:32}) + '<br>';
+  t.innerHTML += '<br>SUCCESS';
+} catch(e) {
+  t.innerHTML = '<pre style="color:red">ERROR: ' + e.message + '\n' + e.stack + '</pre>';
+}
+</script>
+</body></html>

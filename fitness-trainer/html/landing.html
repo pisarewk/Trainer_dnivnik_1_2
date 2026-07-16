@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Express Cross Coach — Электронный дневник тренера</title>
+<link rel="stylesheet" href="../css/common.css?v=5">
+<link rel="stylesheet" href="../css/animations.css">
+<link rel="stylesheet" href="../css/landing.css?v=2">
+</head>
+<body>
+<nav class="landing-nav" id="landingNav">
+  <div class="logo"><svg class="logo-mark" viewBox="0 0 40 40" width="28" height="28"><defs><linearGradient id="lg1" x1="0" y1="0" x2="40" y2="40"><stop offset="0%" stop-color="#6366f1"/><stop offset="100%" stop-color="#f59e0b"/></linearGradient></defs><path d="M20 3 L34 11 L34 27 L20 37 L6 27 L6 11 Z" fill="url(#lg1)" fill-opacity="0.1" stroke="url(#lg1)" stroke-width="2.5" stroke-linejoin="round"/><g fill="url(#lg1)"><rect x="8" y="15" width="3.5" height="10" rx="1.5"/><rect x="12" y="16.5" width="2.5" height="7" rx="1"/><rect x="25.5" y="16.5" width="2.5" height="7" rx="1"/><rect x="28.5" y="15" width="3.5" height="10" rx="1.5"/></g><rect x="14" y="19" width="12" height="2.5" rx="1" fill="url(#lg1)"/></svg><span>Cross<span>Coach</span></span></div>
+  <div class="nav-links">
+    <a href="#features">Возможности</a>
+    <a href="#how">Как это работает</a>
+    <a href="#reviews">Отзывы</a>
+    <button class="theme-toggle nav-theme-toggle" id="themeToggle" title="Тема"></button>
+    <a href="login.html" class="btn btn-outline">Войти</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-blob blob-1"></div>
+  <div class="hero-blob blob-2"></div>
+  <div class="hero-visual" id="heroVisual"></div>
+  <div class="container hero-content">
+    <h1 class="animate-fadeInUp">Электронный дневник <span class="highlight">тренера</span></h1>
+    <p class="animate-fadeInUp delay-1">Цифровая система учёта тренировок, замеров и прогресса клиентов.</p>
+    <div class="hero-cta animate-fadeInUp delay-2">
+      <a href="login.html" class="btn btn-primary btn-lg">Начать бесплатно</a>
+      <a href="#how" class="btn btn-outline btn-lg">Узнать больше</a>
+    </div>
+  </div>
+</header>
+
+<section class="landing-section" id="features">
+  <div class="section-head reveal">
+    <span class="eyebrow">Возможности</span>
+    <h2>Всё для работы тренера</h2>
+    <p>Полный набор инструментов для ведения клиентов</p>
+  </div>
+  <div class="features-grid" id="featuresGrid"></div>
+</section>
+
+<section class="landing-section" id="how" style="background:var(--bg);">
+  <div class="section-head reveal">
+    <span class="eyebrow">План работы</span>
+    <h2>Как это работает</h2>
+  </div>
+  <div class="steps" id="stepsList"></div>
+</section>
+
+<section class="landing-section" id="reviews">
+  <div class="section-head reveal">
+    <span class="eyebrow">Отзывы</span>
+    <h2>Что говорят клиенты</h2>
+  </div>
+  <div class="reviews-grid" id="reviewsGrid"><div class="spinner"></div></div>
+</section>
+
+<section class="landing-section" id="why">
+  <div class="cta-block reveal">
+    <h2>Готовы оцифровать свою работу?</h2>
+    <p>Сократите время на заполнение карточек</p>
+    <a href="login.html" class="btn btn-primary btn-lg">Войти в систему</a>
+  </div>
+</section>
+
+<footer class="landing-footer">
+  <div class="logo"><svg class="logo-mark" viewBox="0 0 40 40" width="26" height="26"><defs><linearGradient id="lg1" x1="0" y1="0" x2="40" y2="40"><stop offset="0%" stop-color="#6366f1"/><stop offset="100%" stop-color="#f59e0b"/></linearGradient></defs><path d="M20 3 L34 11 L34 27 L20 37 L6 27 L6 11 Z" fill="url(#lg1)" fill-opacity="0.1" stroke="url(#lg1)" stroke-width="2.5" stroke-linejoin="round"/><g fill="url(#lg1)"><rect x="8" y="15" width="3.5" height="10" rx="1.5"/><rect x="12" y="16.5" width="2.5" height="7" rx="1"/><rect x="25.5" y="16.5" width="2.5" height="7" rx="1"/><rect x="28.5" y="15" width="3.5" height="10" rx="1.5"/></g><rect x="14" y="19" width="12" height="2.5" rx="1" fill="url(#lg1)"/></svg><span>Cross<span>Coach</span></span></div>
+  <p>&copy; 2026 Express Cross Coach</p>
+</footer>
+
+<script src="../javascript/icons.js?v=5"></script>
+<script src="../javascript/theme.js?v=5"></script>
+<script src="../javascript/landing.js?v=5"></script>
+</body>
+</html>
